@@ -192,8 +192,11 @@ public class MainController extends CSVFileHandler implements Initializable{
     	Long a = Long.parseLong(deleteMovieID.getText());
     	for (Rating u : ratings) {
     		g=g+1;
+    		if(u!=null) {
     		if(a.equals(u.getMovieID())) {
     			o=g;
+    			  	ratings.set(o, null);
+    			break;
 //    			System.out.println(u.toString());
 //    			ratings.remove(u);
     			
@@ -202,14 +205,16 @@ public class MainController extends CSVFileHandler implements Initializable{
 //    			System.out.println(u.toString());
     			
     		}
+    		}
     		
     	}
 //    	System.out.println(ratings.get(o));
-    	ratings.remove(o);
+    	
+  
     	Rating v = new Rating(0,"",0);
         truu tru= new truu(v);
     	re =tru.getUserList();
-//    	System.out.println("astat "+re);
+    	System.out.println("astat "+re);
     	
 //    	System.out.println(ratings);
     	movieText.setText(re);

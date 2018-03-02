@@ -21,9 +21,11 @@ public class truu extends CSVFileHandler{
         String tab = "\t";
         String newLine = "\n";       
         for (Rating u : ratings){
+        	if(u !=null) {
             result.append(u.toString()     + tab +
                           
                           newLine);
+        }
         }
 //        System.out.println(result.toString());
         return result.toString();
